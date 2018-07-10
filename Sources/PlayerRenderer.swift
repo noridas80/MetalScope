@@ -11,7 +11,7 @@
 import Metal
 import AVFoundation
 
-public final class PlayerRenderer {
+@objc public final class PlayerRenderer: NSObject {
     private let currentItemObserver: KeyValueObserver
 
     public var player: AVPlayer? {

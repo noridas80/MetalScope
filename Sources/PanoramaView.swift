@@ -116,7 +116,7 @@ public final class PanoramaView: UIView, SceneLoadable {
 extension PanoramaView: ImageLoadable {}
 
 #if (arch(arm) || arch(arm64)) && os(iOS)
-extension PanoramaView: VideoLoadable {}
+@objc extension PanoramaView: VideoLoadable {}
 #endif
 
 extension PanoramaView {
@@ -176,8 +176,16 @@ extension PanoramaView {
     @objc public func setDeviceOrientationTrackingEnabled(isEnabled: Bool = true) {
         if isEnabled {
             orientationNode.deviceOrientationProvider = DefaultDeviceOrientationProvider()
+            orientationNode.resetRotation();
         } else {
             orientationNode.deviceOrientationProvider = nil
+            orientationNode.resetCenter(animated: true)
+        }
+    }
+    
+    @objc public var isDeviceTrackingEnabled: Bool {
+        get {
+            return !(orientationNode.deviceOrientationProvider == nil)
         }
     }
     

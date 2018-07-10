@@ -46,14 +46,14 @@ extension VideoScene {
     }
 }
 
-public final class MonoSphericalVideoScene: MonoSphericalMediaScene, VideoScene {
+@objc public final class MonoSphericalVideoScene: MonoSphericalMediaScene, VideoScene {
     private var playerTexture: MTLTexture? {
         didSet {
             mediaSphereNode.mediaContents = playerTexture
         }
     }
 
-    private lazy var renderLoop: RenderLoop = {
+    public lazy var renderLoop: RenderLoop = {
         return RenderLoop { [weak self] time in
             self?.renderVideo(atTime: time)
         }

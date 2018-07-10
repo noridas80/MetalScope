@@ -18,7 +18,7 @@ public final class MediaSphereNode: SCNNode {
         }
     }
 
-    public init(radius: CGFloat = 10, segmentCount: Int = 96) {
+    @objc public init(radius: CGFloat = 10, segmentCount: Int = 96) {
         super.init()
 
         let sphere = SCNSphere(radius: radius)
