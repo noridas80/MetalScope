@@ -13,7 +13,7 @@ public protocol ImageScene: class {
     var image: UIImage? { get set }
 }
 
-public final class MonoSphericalImageScene: MonoSphericalMediaScene, ImageScene {
+@objc public final class MonoSphericalImageScene: MonoSphericalMediaScene, ImageScene {
     public var image: UIImage? {
         didSet {
             mediaSphereNode.mediaContents = image
@@ -21,7 +21,7 @@ public final class MonoSphericalImageScene: MonoSphericalMediaScene, ImageScene 
     }
 }
 
-public final class StereoSphericalImageScene: StereoSphericalMediaScene, ImageScene {
+@objc public final class StereoSphericalImageScene: StereoSphericalMediaScene, ImageScene {
     public var image: UIImage? {
         didSet {
             var leftImage: UIImage?

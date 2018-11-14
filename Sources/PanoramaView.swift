@@ -79,9 +79,8 @@ public final class PanoramaView: UIView, SceneLoadable {
         self.panGestureManager.maximumVerticalRotationAngle = 60 / 180 * .pi
         addGestureRecognizer(self.panGestureManager.gestureRecognizer)
     }
-    
     #else
-    public override init(frame: CGRect) {
+    @objc public override init(frame: CGRect) {
         super.init(frame: frame)
         self.panGestureManager.minimumVerticalRotationAngle = -60 / 180 * .pi
         self.panGestureManager.maximumVerticalRotationAngle = 60 / 180 * .pi
