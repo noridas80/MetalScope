@@ -86,7 +86,40 @@ public final class OrientationNode: SCNNode {
             pointOfView.camera?.projectionDirection = cameraProjectionDirection
         }
     }
-
+    
+    public func setOrientation(orientation: UIDeviceOrientation) {
+        var rotation = Rotation()
+        switch orientation {
+        case .portrait:
+            break
+        case .portraitUpsideDown:
+            rotation.rotate(byZ: .pi)
+            break;
+        case .landscapeLeft:
+            rotation.rotate(byZ: .pi / 2)
+            break
+        case .landscapeRight:
+            rotation.rotate(byZ: .pi / -2)
+            break
+        default:
+            break
+        }
+        
+        if #available(iOS 11, *) {
+            let cameraProjectionDirection: SCNCameraProjectionDirection
+            
+            switch orientation {
+            case .landscapeLeft, .landscapeRight:
+                cameraProjectionDirection = .vertical
+            default:
+                cameraProjectionDirection = .horizontal
+            }
+            pointOfView.camera?.projectionDirection = cameraProjectionDirection
+        }
+        interfaceOrientationNode.orientation = rotation.scnQuaternion
+        referenceRotationNode.orientation = rotation.scnQuaternion
+    }
+    
     public func resetRotation() {
         let r1 = Rotation(pointOfView.presentation.worldTransform).inverted()
         let r2 = Rotation(referenceRotationNode.presentation.worldTransform)

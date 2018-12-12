@@ -172,6 +172,11 @@ extension PanoramaView {
         panGestureManager.allowsVerticalRotation = isEnabled
     }
     
+    @objc public func setHorizontalPanningEnabled(isEnabled: Bool = true) {
+        panGestureManager.allowsHorizontalRotation = isEnabled
+    }
+    
+    
     @objc public func setDeviceOrientationTrackingEnabled(isEnabled: Bool = true) {
         if isEnabled {
             orientationNode.deviceOrientationProvider = DefaultDeviceOrientationProvider()
@@ -179,6 +184,18 @@ extension PanoramaView {
         } else {
             orientationNode.deviceOrientationProvider = nil
             orientationNode.resetCenter(animated: true)
+        }
+    }
+    
+    @objc public var isVerticalPanningEnabled: Bool {
+        get {
+            return panGestureManager.allowsVerticalRotation
+        }
+    }
+    
+    @objc public var isHorizontalPanningEnabled: Bool {
+        get {
+            return panGestureManager.allowsHorizontalRotation
         }
     }
     
@@ -195,6 +212,10 @@ extension PanoramaView {
     
     @objc public func setFOV(fov: CGFloat) {
         orientationNode.fieldOfView = fov
+    }
+    
+    @objc public func setOrientation(orientation: UIDeviceOrientation) {
+        orientationNode.setOrientation(orientation: orientation)
     }
 }
 
