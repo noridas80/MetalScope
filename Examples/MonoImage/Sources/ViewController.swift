@@ -1,4 +1,3 @@
-Examples/MonoImage/MonoImage.xcodeproj/project.pbxproj//
 //  ViewController.swift
 //  MonoImage
 //
@@ -22,7 +21,7 @@ final class ViewController: UIViewController {
 
     private func loadPanoramaView() {
         #if arch(arm) || arch(arm64)
-        let panoramaView = PanoramaView(frame: view.bounds, device: device, deviceOrientationTrackingEnabled: false, verticalRotationEnabled: false, verticalRotationRange: PanoramaViewRotationRange(min: 0.0, max: 0.0), horizontalRotationEnabled: true, horizontalRotationRange: PanoramaViewRotationRange(min:0.0, max: 0.0))
+        let panoramaView = PanoramaView(frame: view.bounds, device: device)
         #else
         let panoramaView = PanoramaView(frame: view.bounds) // iOS Simulator
         #endif

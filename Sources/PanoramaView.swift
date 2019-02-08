@@ -18,7 +18,7 @@ public final class PanoramaViewRotationRange {
     }
 }
 
-public final class PanoramaView: UIView, SceneLoadable {
+@objc public final class PanoramaView: UIView, SceneLoadable {
     #if (arch(arm) || arch(arm64)) && os(iOS)
     public let device: MTLDevice
     #endif
