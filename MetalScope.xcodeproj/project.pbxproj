@@ -44,6 +44,8 @@
 		BFB892691E30DCEA00FA9129 /* OrientationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB892681E30DCEA00FA9129 /* OrientationNode.swift */; };
 		BFFE23841E407DDD006097A1 /* InterfaceOrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE23831E407DDD006097A1 /* InterfaceOrientationUpdater.swift */; };
 		BFFE23891E409046006097A1 /* MediaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE23881E409046006097A1 /* MediaFormat.swift */; };
+		D8CF5DFD22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF5DFC22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift */; };
+		D8CF5DFF22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF5DFE22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		BFB892681E30DCEA00FA9129 /* OrientationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OrientationNode.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BFFE23831E407DDD006097A1 /* InterfaceOrientationUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = InterfaceOrientationUpdater.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BFFE23881E409046006097A1 /* MediaFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MediaFormat.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D8CF5DFC22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaPinchGestureManager.swift; sourceTree = "<group>"; };
+		D8CF5DFE22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaDoubleTapGestureManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 			children = (
 				BFB8919E1E2E083000FA9129 /* PanoramaView.swift */,
 				BFB8922F1E2F761600FA9129 /* PanoramaPanGestureManager.swift */,
+				D8CF5DFC22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift */,
+				D8CF5DFE22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift */,
 			);
 			name = PanoramaView;
 			sourceTree = "<group>";
@@ -316,10 +322,12 @@
 				BFB891A41E2E090A00FA9129 /* Rotation.swift in Sources */,
 				BF46F0A31EADEA4600F5CB58 /* VideoLoadable.swift in Sources */,
 				BFFE23841E407DDD006097A1 /* InterfaceOrientationUpdater.swift in Sources */,
+				D8CF5DFF22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift in Sources */,
 				BFAB13131E361B3700A1642C /* StereoViewController.swift in Sources */,
 				BFB892691E30DCEA00FA9129 /* OrientationNode.swift in Sources */,
 				BFAB13051E35B9EB00A1642C /* ViewerParameters.swift in Sources */,
 				BFAB13071E35BE0C00A1642C /* ScreenParameters.swift in Sources */,
+				D8CF5DFD22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift in Sources */,
 				BF1452DF1E320BAC0042598E /* SceneLoadable.swift in Sources */,
 				BFB891B71E2E2A9900FA9129 /* InterfaceOrientationProvider.swift in Sources */,
 				BFAB130B1E35D1E900A1642C /* StereoParameters.swift in Sources */,
@@ -477,6 +485,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.teliportme.metalscope;
@@ -505,6 +514,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teliportme.metalscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
