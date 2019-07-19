@@ -66,6 +66,15 @@ public final class PanoramaViewRotationRange {
         return manager
     }()
 
+    fileprivate lazy var pinchGestureManager: PanoramaPinchGestureManager = {
+        let manager = PanoramaPinchGestureManager(camera: self.pointOfView?.camera)
+        return manager
+    }()
+    
+    fileprivate lazy var doubleTapGestureManager: PanoramaDoubleTapGestureManager = {
+        let manager = PanoramaDoubleTapGestureManager(camera: self.pointOfView?.camera)
+        return manager
+    }()
     
     fileprivate lazy var interfaceOrientationUpdater: InterfaceOrientationUpdater = {
         return InterfaceOrientationUpdater(orientationNode: self.orientationNode)
@@ -78,6 +87,8 @@ public final class PanoramaViewRotationRange {
         self.panGestureManager.minimumVerticalRotationAngle = -60 / 180 * .pi
         self.panGestureManager.maximumVerticalRotationAngle = 60 / 180 * .pi
         addGestureRecognizer(self.panGestureManager.gestureRecognizer)
+        addGestureRecognizer(self.pinchGestureManager.gestureRecognizer)
+        addGestureRecognizer(self.doubleTapGestureManager.gestureRecognizer)
     }
     #else
     @objc public override init(frame: CGRect) {
