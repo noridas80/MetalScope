@@ -75,6 +75,24 @@ extension CMMotionManager: DeviceOrientationProvider {
     }
 }
 
+internal final class CustomDeviceOrientationProvider: DeviceOrientationProvider {
+    private static var motionManager: CMMotionManager? = nil
+    
+    init(motionManager: CMMotionManager) {
+        CustomDeviceOrientationProvider.motionManager = motionManager
+    }
+    
+    func deviceOrientation(atTime time: TimeInterval) -> Rotation? {
+        return CustomDeviceOrientationProvider.motionManager?.deviceOrientation(atTime: time)
+    }
+    
+    func shouldWaitDeviceOrientation(atTime time: TimeInterval) -> Bool {
+        return (CustomDeviceOrientationProvider.motionManager?.shouldWaitDeviceOrientation(atTime: time))!
+    }
+    
+    
+}
+
 internal final class DefaultDeviceOrientationProvider: DeviceOrientationProvider {
     private static let motionManager = CMMotionManager()
 

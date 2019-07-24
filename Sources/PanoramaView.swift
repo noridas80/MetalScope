@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import CoreMotion
 
 public final class PanoramaViewRotationRange {
     public let max : Float
@@ -22,6 +23,7 @@ public final class PanoramaViewRotationRange {
     #if (arch(arm) || arch(arm64)) && os(iOS)
     public let device: MTLDevice
     #endif
+    public var motionManger: CMMotionManager?
     
     public var scene: SCNScene? {
         get {
@@ -37,7 +39,12 @@ public final class PanoramaViewRotationRange {
     public weak var sceneRendererDelegate: SCNSceneRendererDelegate?
 
     public lazy var orientationNode: OrientationNode = {
-        let node = OrientationNode()
+        let node: OrientationNode
+        if self.motionManger == nil {
+            node = OrientationNode(motionManager: self.motionManger!)
+        } else {
+            node = OrientationNode()
+        }
         let mask = CategoryBitMask.all.subtracting(.rightEye)
         node.pointOfView.camera?.categoryBitMask = mask.rawValue
         return node
@@ -84,6 +91,7 @@ public final class PanoramaViewRotationRange {
     @objc public init(frame: CGRect, device: MTLDevice) {
         self.device = device
         super.init(frame: frame)
+        self.motionManger = nil
         self.panGestureManager.minimumVerticalRotationAngle = -60 / 180 * .pi
         self.panGestureManager.maximumVerticalRotationAngle = 60 / 180 * .pi
         addGestureRecognizer(self.panGestureManager.gestureRecognizer)
@@ -99,6 +107,19 @@ public final class PanoramaViewRotationRange {
     }
     #endif
 
+    #if (arch(arm) || arch(arm64)) && os(iOS)
+    @objc public init(frame: CGRect, device: MTLDevice, motionManager: CMMotionManager) {
+        self.device = device
+        super.init(frame: frame)
+        self.motionManger = motionManager
+        self.panGestureManager.minimumVerticalRotationAngle = -60 / 180 * .pi
+        self.panGestureManager.maximumVerticalRotationAngle = 60 / 180 * .pi
+        addGestureRecognizer(self.panGestureManager.gestureRecognizer)
+        addGestureRecognizer(self.pinchGestureManager.gestureRecognizer)
+        addGestureRecognizer(self.doubleTapGestureManager.gestureRecognizer)
+    }
+    #endif
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -7,6 +7,7 @@
 //
 
 import SceneKit
+import CoreMotion
 
 public final class OrientationNode: SCNNode {
     let userRotationNode = SCNNode()
@@ -22,13 +23,13 @@ public final class OrientationNode: SCNNode {
         }
     }
 
-    public var deviceOrientationProvider: DeviceOrientationProvider? = DefaultDeviceOrientationProvider()
+    public var deviceOrientationProvider: DeviceOrientationProvider?
 
     public var interfaceOrientationProvider: InterfaceOrientationProvider? = DefaultInterfaceOrientationProvider()
 
     public override init() {
         super.init()
-
+        self.deviceOrientationProvider = DefaultDeviceOrientationProvider()
         addChildNode(userRotationNode)
         userRotationNode.addChildNode(referenceRotationNode)
         referenceRotationNode.addChildNode(deviceOrientationNode)
@@ -42,6 +43,22 @@ public final class OrientationNode: SCNNode {
         self.updateCamera()
     }
 
+    @objc public init(motionManager: CMMotionManager) {
+        super.init()
+        self.deviceOrientationProvider = CustomDeviceOrientationProvider(motionManager: motionManager)
+        addChildNode(userRotationNode)
+        userRotationNode.addChildNode(referenceRotationNode)
+        referenceRotationNode.addChildNode(deviceOrientationNode)
+        deviceOrientationNode.addChildNode(interfaceOrientationNode)
+        interfaceOrientationNode.addChildNode(pointOfView)
+        
+        let camera = SCNCamera()
+        camera.zNear = 0.3
+        pointOfView.camera = camera
+        
+        self.updateCamera()
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
