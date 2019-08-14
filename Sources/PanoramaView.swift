@@ -40,7 +40,7 @@ public final class PanoramaViewRotationRange {
 
     public lazy var orientationNode: OrientationNode = {
         let node: OrientationNode
-        if self.motionManger == nil {
+        if self.motionManger != nil {
             node = OrientationNode(motionManager: self.motionManger!)
         } else {
             node = OrientationNode()
@@ -101,9 +101,6 @@ public final class PanoramaViewRotationRange {
     #else
     @objc public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.panGestureManager.minimumVerticalRotationAngle = -60 / 180 * .pi
-        self.panGestureManager.maximumVerticalRotationAngle = 60 / 180 * .pi
-        addGestureRecognizer(self.panGestureManager.gestureRecognizer)
     }
     #endif
 
