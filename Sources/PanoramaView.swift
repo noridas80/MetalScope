@@ -142,6 +142,7 @@ public final class PanoramaViewRotationRange {
 }
 
 extension PanoramaView: ImageLoadable {}
+extension PanoramaView: TextureLoadable {}
 
 #if (arch(arm) || arch(arm64)) && os(iOS)
 @objc extension PanoramaView: VideoLoadable {}

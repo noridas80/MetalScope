@@ -44,6 +44,8 @@
 		BFB892691E30DCEA00FA9129 /* OrientationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB892681E30DCEA00FA9129 /* OrientationNode.swift */; };
 		BFFE23841E407DDD006097A1 /* InterfaceOrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE23831E407DDD006097A1 /* InterfaceOrientationUpdater.swift */; };
 		BFFE23891E409046006097A1 /* MediaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE23881E409046006097A1 /* MediaFormat.swift */; };
+		D87F5D52233275BE00416646 /* TextureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5D51233275BE00416646 /* TextureScene.swift */; };
+		D87F5D542332772900416646 /* TextureLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F5D532332772900416646 /* TextureLoadable.swift */; };
 		D8CF5DFD22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF5DFC22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift */; };
 		D8CF5DFF22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CF5DFE22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,8 @@
 		BFB892681E30DCEA00FA9129 /* OrientationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OrientationNode.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BFFE23831E407DDD006097A1 /* InterfaceOrientationUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = InterfaceOrientationUpdater.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BFFE23881E409046006097A1 /* MediaFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MediaFormat.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D87F5D51233275BE00416646 /* TextureScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureScene.swift; sourceTree = "<group>"; };
+		D87F5D532332772900416646 /* TextureLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLoadable.swift; sourceTree = "<group>"; };
 		D8CF5DFC22DEE89D00E00ACD /* PanoramaPinchGestureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaPinchGestureManager.swift; sourceTree = "<group>"; };
 		D8CF5DFE22DF25F600E00ACD /* PanoramaDoubleTapGestureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaDoubleTapGestureManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,9 +210,11 @@
 				BF1452DE1E320BAC0042598E /* SceneLoadable.swift */,
 				BF46F0A01EADE9C300F5CB58 /* ImageLoadable.swift */,
 				BF46F0A21EADEA4600F5CB58 /* VideoLoadable.swift */,
+				D87F5D532332772900416646 /* TextureLoadable.swift */,
 				BFB8920A1E2F364B00FA9129 /* SphericalMediaScene.swift */,
 				BFA89A7D1E3108D0005A3529 /* ImageScene.swift */,
 				BFA89A791E310401005A3529 /* VideoScene.swift */,
+				D87F5D51233275BE00416646 /* TextureScene.swift */,
 				BF1453051E321CE30042598E /* CategoryBitMask.swift */,
 				BFB891911E2E044900FA9129 /* Video */,
 			);
@@ -319,6 +325,7 @@
 				BFB891A61E2E109A00FA9129 /* Rotation+CoreMotion.swift in Sources */,
 				BFAB13111E35EE0D00A1642C /* StereoScene.swift in Sources */,
 				BF1453061E321CE30042598E /* CategoryBitMask.swift in Sources */,
+				D87F5D52233275BE00416646 /* TextureScene.swift in Sources */,
 				BFB891A41E2E090A00FA9129 /* Rotation.swift in Sources */,
 				BF46F0A31EADEA4600F5CB58 /* VideoLoadable.swift in Sources */,
 				BFFE23841E407DDD006097A1 /* InterfaceOrientationUpdater.swift in Sources */,
@@ -331,6 +338,7 @@
 				BF1452DF1E320BAC0042598E /* SceneLoadable.swift in Sources */,
 				BFB891B71E2E2A9900FA9129 /* InterfaceOrientationProvider.swift in Sources */,
 				BFAB130B1E35D1E900A1642C /* StereoParameters.swift in Sources */,
+				D87F5D542332772900416646 /* TextureLoadable.swift in Sources */,
 				BFAB12FF1E35B94400A1642C /* StereoRenderer.swift in Sources */,
 				BF9B15B61E44B4B1004CC8CE /* KeyValueObserver.swift in Sources */,
 				BF46F09A1EADDEDA00F5CB58 /* Deprecations+Removals.swift in Sources */,
