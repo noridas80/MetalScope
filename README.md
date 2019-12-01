@@ -131,6 +131,16 @@ If you use [CocoaPods](https://github.com/CocoaPods/CocoaPods) to manage your de
 pod 'MetalScope'
 ```
 
+ ### Swift Package Manager
+
+Once you have your Swift package set up, adding MetalScope as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/jeslyvarghese/MetalScope", from: "0.16.1")
+]
+```
+
 ### Manually
 
 You can also manually install the framework by dragging and dropping the `MetalScope.xcodeproj` into your project or workspace.
