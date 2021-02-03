@@ -177,10 +177,10 @@ open class StereoViewController: UIViewController, SceneLoadable {
             }
         }
 
-        if UIDevice.current.orientation != .unknown {
-            showIntroductionView(animated: animated)
-            startIntroductionViewVisibilityUpdates()
-        }
+//        if UIDevice.current.orientation != .unknown {
+//            showIntroductionView(animated: animated)
+//            startIntroductionViewVisibilityUpdates()
+//        }
     }
 
     open override func viewWillDisappear(_ animated: Bool) {
